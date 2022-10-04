@@ -1,0 +1,42 @@
+.TodoHomeDiv {
+  padding: 5px 20px;
+  box-shadow: 0 0 8px blueviolet;
+  border: 1px solid blueviolet;
+  border-top: 10px solid blueviolet;
+  border-bottom: 12px solid blueviolet;
+  border-radius: 5px;
+  width: "350px";
+}
+
+.TodoDiv {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: max-content;
+  flex-direction: column;
+  margin: 10px;
+  margin-bottom: 25px;
+  background-color: rgb(245, 245, 245);
+  padding: 10px;
+}
+.todoTitle {
+  font-size: 25px;
+  font-weight: 100;
+  padding: 7px;
+  width: 350px;
+  font-size: 23px;
+  overflow: scroll;
+}
+.todoDesc {
+  font-size: 21px;
+  font-weight: 100;
+  padding: 5px;
+  width: 350px;
+  overflow: scroll;
+}
+.todoTitleInput {
+  margin-bottom: 20px;
+}
+.todoDescInput {
+  margin-bottom: 20px;
+}
