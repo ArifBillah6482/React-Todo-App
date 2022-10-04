@@ -1,4 +1,3 @@
-import { useState } from "react";
 import NewTodo from "./newTodo";
 import Todos from "./Todos";
 /////////////////////////
@@ -9,9 +8,6 @@ import {
   getDatabase,
   ref,
   set,
-  get,
-  child,
-  update,
   remove,
 } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-database.js";
 const firebaseConfig = {
@@ -32,7 +28,6 @@ const db = getDatabase();
 ///////////////////////
 
 const TodoHome = () => {
-  const [todos, setTodos] = useState([]);
 
   const handleTodo = (id, id2, title, desc) => {
     set(ref(db, "Todos/" + id2), {
@@ -52,7 +47,7 @@ const TodoHome = () => {
   /////////////////////////
   const dltTodo = (id2) => {
     remove(ref(db, "Todos/" + id2))
-      .then(() => {})
+      .then(() => {console.log(" ")})
       .catch((err) => console.log(err));
     // setTodos((oldTodos) => {
     //   const rmvTodo = oldTodos.filter((todo) => {
