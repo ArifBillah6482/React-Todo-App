@@ -1,3 +1,4 @@
+import { useState } from "react";
 import NewTodo from "./newTodo";
 import Todos from "./Todos";
 /////////////////////////
@@ -24,10 +25,16 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getDatabase();
+let fake;
+fake = analytics;
+setTimeout(() => {
+  console.log(fake); 
+}, 10000000);
 /////////////////////////
 ///////////////////////
 
 const TodoHome = () => {
+  const [todos, setTodos] = useState([]);
 
   const handleTodo = (id, id2, title, desc) => {
     set(ref(db, "Todos/" + id2), {
@@ -47,7 +54,7 @@ const TodoHome = () => {
   /////////////////////////
   const dltTodo = (id2) => {
     remove(ref(db, "Todos/" + id2))
-      .then(() => {console.log(" ")})
+      .then(() => {})
       .catch((err) => console.log(err));
     // setTodos((oldTodos) => {
     //   const rmvTodo = oldTodos.filter((todo) => {
