@@ -3,14 +3,9 @@ import NewTodo from "./newTodo";
 import Todos from "./Todos";
 /////////////////////////
 /////////////////////////
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js";
-import {
-  getDatabase,
-  ref,
-  set,
-  remove,
-} from "https://www.gstatic.com/firebasejs/9.9.3/firebase-database.js";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getDatabase, ref, set, remove } from "firebase/database";
 const firebaseConfig = {
   apiKey: "AIzaSyDjf6aeEPBCUW3n16ZewLpdM0uaSyFubXM",
   authDomain: "react-todo-app-4a68f.firebaseapp.com",
@@ -28,7 +23,7 @@ const db = getDatabase();
 let fake;
 fake = analytics;
 setTimeout(() => {
-  console.log(fake); 
+  console.log(fake);
 }, 10000000);
 /////////////////////////
 ///////////////////////
